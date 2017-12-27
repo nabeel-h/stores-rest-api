@@ -14,9 +14,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = "nabeel"
 api = Api(app)
 
+'''
 @app.before_first_request
 def create_tables():	#creates database with all tables unless it exists already. Does this check before the first request
 	db.create_all()	
+'''
 
 jwt = JWT(app,authenticate,identity) # creates new endpoint : /auth
 	
